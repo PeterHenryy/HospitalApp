@@ -28,11 +28,11 @@ namespace HospitalApp.Services
             return user;
         }
 
-        public async Task<AppUser> MapUserUpdates(AppUser updatedUser, AppUser currentUser, UserManager<AppUser> userManager)
+        public async Task<AppUser> MapUserUpdates(AppUser updatedUser, AppUser currentUser)
         {
             if (!String.IsNullOrEmpty(updatedUser.Email))
             {
-                var findUserByEmail = await _userManager.FindByEmailAsync(updatedUser.Email);
+                AppUser findUserByEmail = await _userManager.FindByEmailAsync(updatedUser.Email);
                 if (findUserByEmail == null)
                 {
                     currentUser.Email = updatedUser.Email;

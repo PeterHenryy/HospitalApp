@@ -18,5 +18,6 @@ namespace HospitalApp.Data
 
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
     }
 }
